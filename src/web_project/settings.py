@@ -39,10 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #third party app
+    'crispy_forms',
 
     #own
     'pages',
     'products',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
@@ -124,3 +126,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Third Party app setting
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# Own Setting
+LOGIN_REDIRECT_URL = 'home_view'
+LOGIN_URL = 'login'
