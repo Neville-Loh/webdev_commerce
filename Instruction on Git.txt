@@ -1,9 +1,0 @@
-
-To fetch file from Bit bucket
-git pull
-
-To update file on Bit bucket
-
-git add .        (adds everthing, NB if deleted files require additional command) mark to be commited
-git commit -m "info about the change"     ( save update locally)
-git push    ( saves to online server )

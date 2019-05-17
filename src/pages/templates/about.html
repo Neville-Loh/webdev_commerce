@@ -5,8 +5,69 @@
 
 
 {% block content%}
+</br> 	
+The page has been hijacked by the creator of the website for documentation.
+</br >
+</br >
+url pattern:</br >
+<a href="{% url 'home_view' %}">home_view</a></br >
+<a href="{% url 'about_view' %}">about_view</a></br >
+<a href="{% url 'contact_view' %}">contact</a></br >
+<a href="{% url 'login' %}">login</a></br >
+<a href="{% url 'logout' %}">logout</a></br >
+<a href="{% url 'register' %}">register</a></br >
+
+<a href="{% url 'register' %}">register</a></br >
+<a href="{% url 'register' %}">register</a></br >
+
+</br ></br ></br >
+Require login to acess:</br >
+<a href="{% url 'profile' %}">profile</a></br >
+
+</br >
+Administration access: </br >
+<a href="http://localhost:8000/admin/">admin/</a></br >
+login: admin </br >
+password: admin</br ></br >
+
+To create new superuser:</br >
+python manage.py createsuperuser </br >
+--------------------------------------------------------------------------------------------------------------------</br >
+
+changelogs: </br >
+14/05 - Added registor function </br >
+14/05 - Added login and logout system </br >
+17/05 - Added static deposite(temp) </br >
+17/05 - Product image can now be added in /admin, filename will be saved as random char </br>
+17/05 - product detail can be refered using id, url are auto generated </br>
 
 
-This is the about page some more is done
+</br >--------------------------------------------------------------------------------------------------------------</br >
+Future plans:</br >
+</br >
+User:</br >
+Add password reset via email</br >
+Add email verification when creating account</br >
+Add profile picture upload system</br >
+</br >
+Cart:</br >
+Add cart system with session</br >
+create check out system</br >
+</br >
+Admin interface:
+</br >
+</br >
+
+------------------------------------------------------------------------------------------------------------------------</br >
+Things need to do before launch: </br >
+1. static file roulting /src/web_project/setting.py </br >
+2. delete all self_note from </br>
+[navbar </br >
+self_note.html from /src/pages/templates/ </br >
+self_note views fn from /src/pages/view.py </br >
+self_note urls from /src/pages/ulrs.py </br >
+]
+
+
 
 {% endblock %}

@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    
     #third party app
     'crispy_forms',
 
@@ -121,13 +121,28 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+##########################################################
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+############ The below portion are only for local testing ########## 
+# Please Read # https://docs.djangoproject.com/en/2.2/howto/static-files/
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static_my_local"),
+]
+# directory of Serving file *Where file will ends up
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "static_root")
 
-# Third Party app setting
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "media_root")
+############### The Above Code is Not For Production Use ################
+
+
+# MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+# MEDIA_URL = '/media/'
+
+# Third Party ap p setting
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Own Setting
