@@ -19,28 +19,45 @@ from django.conf.urls.static import static
 ####################################################################
 
 from django.contrib import admin
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.urls import path, include
-# User creation view
-from users import views as user_views 
-from products.views import ProductListView, product_list_view, ProductDetailView, product_detail_view
 
-# default django login logout view
+# User view
+from users import views as user_views 
+# Product View
+from products.views import (
+    ProductListView, 
+    ProductDetailView,
+    ProductDetailSlugView, 
+    ProductFeaturedListView,
+    ProductFeaturedDetailView,
+
+    # function based view testing
+    # product_list_view,
+    # product_detail_view, 
+    )
+
+# cart view
+from carts.views import cart_home
+
+# default django login logout view'ProductFeaturedtListView
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('pages.urls')), 
+
+    # User url
     path('register/', user_views.register, name='register'),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),  # as_view set the directory of html
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
     path('profile/', user_views.profile, name='profile'),
-    path('', include('pages.urls')), 
 
-    url(r'^products/$', ProductListView.as_view()),
-    url(r'^products-fbv/$', product_list_view),   
+    # Product url
+    url(r'^products/', include("products.urls", namespace='products')),
+    url(r'^search/', include("search.urls", namespace='search')),
+    url(r'^cart/$',cart_home, name='cart'),
 
-    url(r'^products/(?P<pk>\d+)/$', ProductDetailView.as_view()),
-    url(r'^products-fbv/(?P<pk>\d+)/$', product_detail_view),   
 ]
 
 ####### If DEBUG is On, turn on local static ################################

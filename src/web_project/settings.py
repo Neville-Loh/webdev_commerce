@@ -42,8 +42,11 @@ INSTALLED_APPS = [
     'crispy_forms',
 
     #own
+    'carts',
     'pages',
     'products',
+    'search',
+    'tags',
     'users.apps.UsersConfig',
 ]
 

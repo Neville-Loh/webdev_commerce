@@ -15,3 +15,5 @@ def contact_view(request):
 # -----------------------------------------------------------------
 def self_note_view(request):
 	return render(request, "self_note.html", {})
+def self_note_view_1(request):
+	return render(request, "self_note_1.html", {})

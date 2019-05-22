@@ -1,0 +1,60 @@
+<!-- <a href="{% url 'products:detail' slug=instance.slug %}" class="btn btn-warning">URL shortcut</a> -->
+<!-- <div class="card" style="width: 18rem;">
+
+	{% if instance.image %}
+	<a href="{{ instance.get_absolute_url }}">
+  		<img src="{{ instance.image.url }}" class="card-img-top" alt="{{ instance.title }} logo">
+  	</a>
+  	{% endif %}
+
+  <div class="card-body">
+    <h5 class="card-title">{{ instance.title }}</h5>
+    <p class="card-text">{{ instance.description }}</p>
+    <a href="{{ instance.get_absolute_url }}" class="btn btn-primary">View</a>
+  </div>
+</div> -->
+<style type="text/css">
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+</style>
+
+
+<div class="col-md-4">
+          <div class="card mb-4 shadow-sm" style='min-height: 400px; max-height: 400px;'>
+
+            <!------------------------ Image componet --------------------------->
+            {% if instance.image %}
+              <a href="{{ instance.get_absolute_url }}">
+                  <img src="{{ instance.image.url }}" class="card-img-top" alt="{{ instance.title }} logo" style='min-height: 225px;'>
+              </a>
+            {% else %}
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            {% endif %}
+
+            <!------------------------ Card body -------------------------------->
+            <div class="card-body">
+              <a href="{{ instance.get_absolute_url }}">
+                <h5 class="card-title">{{ instance.title }}</h5>
+              </a>
+
+              <div class="alert alert-primary" role="alert">
+                  <p class="card-text pt-auto"><small>{{ instance.description|truncatewords:8 }}</small></p>
+
+                <div class="d-flex justify-content-between align-items-center">
+                </div>
+
+                <div class="btn-group pt-auto">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{ instance.get_absolute_url }}">View</a></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+
+                <small class="text-muted">${{ instance.price }}</small>
+              </div>
+
+            </div>
+
+          </div>
+        </div>

@@ -2,14 +2,20 @@
 
 {% block content%}
 </br ></br ></br ></br ></br >
-<center>
-	<h2> You have been logged out </h2>
-	<div class=border-top pt-3">
-		<small class="text-muted">
-			</br >
-			<a  href="{% url 'login' %}">Log In Again</a>
-		</small>
-	<div>
-</center>
+
+	<div class='container'>
+		<div class='row'>
+			<div class='col-3'></div>
+			<div class='col-6'>
+
+				<h2> You have been logged out </h2>
+				<div class=border-top pt-2"></div>
+					<small class="text-muted">
+						</br >
+						<a  href="{% url 'login' %}">Log In Again</a>
+					</small>				
+			</div>
+		</div>
+	</div>
 
 {% endblock content %}

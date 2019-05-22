@@ -1,0 +1,28 @@
+{% load static %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<!-- <form method='GET' action='{% url "search:query" %}' class="form my-2 my-lg-0">
+	<div class='input-group'>
+		<input class="form-control" type='text' placeholder="Search" name='q' aria-label="Search" value='{{ request.GET.q }}'>
+		<span class='input-group-btn'>
+			<button clas="btn btn-outline-success" type="submit">Search</button>
+		</span>
+	</div>
+</form>
+ -->
+<!-- <i class="fa fa-search"></i> -->
+		<form method='GET' action='{% url "search:query" %}' class="form my-2 my-lg-0">
+            <div class="input-group" id="adv-search">
+                <input class="form-control" type='text' placeholder="Search" name='q' aria-label="Search" value='{{ request.GET.q }}'>
+                <div class="input-group-append">
+                    <div class="btn-group" role="group">
+                        <button class="btn btn-outline-secondary " type="submit">Search<i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </form>

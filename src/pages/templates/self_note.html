@@ -1,328 +1,421 @@
-{% load static %}
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.5">
-    <title>Carousel Template · Bootstrap</title>
+{% extends 'base.html' %}
+{% block content %}
+  <h5>This is a page to test the bootstrap component</h5>
+    <div class='container-fluid'>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/carousel/">
+      <div class="alert alert-secondary" role="alert">
+        This is the nav bar 
+      </div>
 
-    <!-- Bootstrap core CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <div class="row">
 
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-    <!-- Custom styles for this template -->
-    <link href="{% static "css/carousel.css" %}" rel="stylesheet">
-    
-  </head>
-  <body>
-    <header>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="#">Carousel</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-      </ul>
-      <form class="form-inline mt-2 mt-md-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
-</header>
-
-<main role="main">
-
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
-        <div class="container">
-          <div class="carousel-caption text-left">
-            <h1>Example headline.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+        <div class="col-2" style='min-height: 700px;'>
+          <div class="alert alert-primary" role="alert" style='min-height: 700px;'>
+                side bar, col-2 
           </div>
         </div>
+
+        <!-------------------------- Main content ----- ------------------------>    
+        <div class="col-10" >
+          <div class="alert alert-primary" role="alert" style='min-height: 700px;'>
+                Main content, col-10  min-height:800 px
+              </br ></br >
+
+
+                Test of no-gutters
+                <!--------------------- row no-gutters ---------------->
+                <div class="row no-gutters">
+
+                  <div class="col">
+                    <div class="alert alert-warning" role="alert">
+                      this is the demonstration of row no-gutters
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="alert alert-warning" role="alert">
+                      this is the demonstration of row no-gutters
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="alert alert-warning" role="alert">
+                      this is the demonstration of row no-gutters
+                    </div>
+                  </div>
+
+                </div>
+
+                Test of margin control 
+                <!----------   The test of margin control      ------------------------->
+                <div class="row">
+                  <div class="col-1">
+                    <div class="alert alert-warning" role="alert">
+                        Home
+                    </div>
+                  </div>
+                  <div class="col-4 ml-auto">
+                    <div class="alert alert-warning" role="alert">
+                        <input type='text' class='form-control' placeholder="Search">
+                    </div>
+                  </div>
+                </div>
+
+                Test of order control
+                <!------------   The test of order control     ------------------------->
+                <div class='row'>
+                  <div class="col-2 order-12">
+                    <div class="alert alert-warning" role="alert">
+                        First Item, order-12
+                    </div>
+                  </div>
+                  <div class="col-8 order-6">
+                    <div class="alert alert-warning" role="alert">
+                        Second Item, order-6
+                    </div>
+                  </div>
+                  <div class="col-2 order-1">
+                    <div class="alert alert-warning" role="alert">
+                        Last Item , order-1
+                    </div>
+                  </div>
+                </div>
+
+                <!-------------- Break point testing ------------------->
+                Test of breakpoint and browser compatibility
+              resize the browser to test it.</br></br>
+              (col-) the smallest size</br>
+              (col-sm-) the size beyond small</br>
+              (col-md-) the size beyond medium</br>
+              (col-lg-) the size of large device
+
+                <div class='row'>
+                  <div class="col-12 col-sm-4 ml-auto">
+                        <input type='text' class='form-control' placeholder="col-12 col-sm-4">
+                  </div>
+                </div>
+                <div class='row'>
+                  <div class="col-12 col-md-4 ml-auto">
+                        <input type='text' class='form-control' placeholder="col-12 col-md-6">
+                  </div>
+                </div>
+                <div class='row'>
+                  <div class="col-12 col-lg-4 ml-auto">
+                        <input type='text' class='form-control' placeholder="col-12 col-lg-4">
+                  </div>
+                </div>
+                <div class='row'>
+                  <div class="col-12 col-sm-12 col-md-6 col-lg-4 ml-auto">
+                        <input type='text' class='form-control' placeholder="col-12 col-sm-12 col-md-6 col-lg-4">
+                  </div>
+                </div>
+
+            </div>
+        </div>
+        <!------------------------End of main content ------ ------------------>
+
       </div>
-      <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+      <!------------------ End of the first row , nav and main content -------->
+
+
+      <!----------------------- Second Row Content ---------------------->
+      Test of mobile compatibility: Rearranging column at small size 
+      <div class='row'>
+
+        <div class="col-12 col-lg-2 mx-auto order-1">
+          <div class="alert alert-success" role="alert">
+              Top Content Item </br>
+              col-12 col-lg-2 order-1 mx-auto
           </div>
         </div>
-      </div>
-      <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
-        <div class="container">
-          <div class="carousel-caption text-right">
-            <h1>One more for good measure.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+
+        <div class="col-12 col-lg-8 order-6 ml-auto mr-auto">
+          <div class="alert alert-success" role="alert" style='min-height: 700px;'>
+                Middle</br>
+                col-12 col-lg-8 order-6 ml-auto mr-auto </br>
+                </br >
+                Can also use something like ml-lg-auto and order-ml-6</br></br></br>
+
+                Spacing and padding:</br>
+              bootstrap/utilities/spacing</br>
+
+              Method:</br>
+              class='col-3 py-3'            ------------------ Padding top and bottom </br>
+              class='col-3 py-5'            -------------------Padding lelf and right </br>
+              </br>
+
+              more on the site , min=0 max=5
+
+
           </div>
         </div>
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
 
-
-  <!-- Marketing messaging and featurettes
-  ================================================== -->
-  <!-- Wrap the rest of the page in another container to center all the content. -->
-
-  <div class="container marketing">
-
-    <!-- Three columns of text below the carousel -->
-    <div class="row">
-      <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-        <h2>Heading</h2>
-        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-    </div><!-- /.row -->
-
-
-    <!-- START THE FEATURETTES -->
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-      <div class="col-md-5 order-md-1">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-      </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <!-- /END THE FEATURETTES -->
-
-  </div><!-- /.container -->
-
-
-  <!-- FOOTER -->
-<footer class="page-footer font-small mdb-color pt-4">
-
-  <!-- Footer Links -->
-  <div class="container text-center text-md-left">
-
-    <!-- Footer links -->
-    <div class="row text-center text-md-left mt-3 pb-3">
-
-      <!-- Grid column -->
-      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-        <h6 class="text-uppercase mb-4 font-weight-bold">Company name</h6>
-        <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-          consectetur
-          adipisicing elit.</p>
-      </div>
-      <!-- Grid column -->
-
-      <hr class="w-100 clearfix d-md-none">
-
-      <!-- Grid column -->
-      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-        <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
-        <p>
-          <a href="#!">MDBootstrap</a>
-        </p>
-        <p>
-          <a href="#!">MDWordPress</a>
-        </p>
-        <p>
-          <a href="#!">BrandFlow</a>
-        </p>
-        <p>
-          <a href="#!">Bootstrap Angular</a>
-        </p>
-      </div>
-      <!-- Grid column -->
-
-      <hr class="w-100 clearfix d-md-none">
-
-      <!-- Grid column -->
-      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-        <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
-        <p>
-          <a href="#!">Your Account</a>
-        </p>
-        <p>
-          <a href="#!">Become an Affiliate</a>
-        </p>
-        <p>
-          <a href="#!">Shipping Rates</a>
-        </p>
-        <p>
-          <a href="#!">Help</a>
-        </p>
-      </div>
-
-      <!-- Grid column -->
-      <hr class="w-100 clearfix d-md-none">
-
-      <!-- Grid column -->
-      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-        <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-        <p>
-          <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-        <p>
-          <i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
-        <p>
-          <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-        <p>
-          <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
-      </div>
-      <!-- Grid column -->
-
-    </div>
-    <!-- Footer links -->
-
-    <hr>
-
-    <!-- Grid row -->
-    <div class="row d-flex align-items-center">
-
-      <!-- Grid column -->
-      <div class="col-md-7 col-lg-8">
-
-        <!--Copyright-->
-        <p class="text-center text-md-left">© 2018 Copyright:
-          <a href="https://mdbootstrap.com/education/bootstrap/">
-            <strong> MDBootstrap.com</strong>
-          </a>
-        </p>
-
-      </div>
-      <!-- Grid column -->
-
-      <!-- Grid column -->
-      <div class="col-md-5 col-lg-4 ml-lg-0">
-
-        <!-- Social buttons -->
-        <div class="text-center text-md-right">
-          <ul class="list-unstyled list-inline">
-            <li class="list-inline-item">
-              <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                <i class="fab fa-google-plus-g"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </li>
-          </ul>
+        <div class="col-12 col-lg-2 order-12">
+          <div class="alert alert-success" role="alert">
+              Bottom content Item</br>
+              col-12 col-lg-2 order-12
+          </div>
         </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       </div>
-      <!-- Grid column -->
+      </br ><div class="border-top py-4"></div></br ></br >
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='container bg-light'>
+      <div class="alert alert-primary" role="alert">
+        container: it shrink when size of the browser is changed
+      </div>
     </div>
-    <!-- Grid row -->
+    <div class='container-fluid'>
+      <div class="alert alert-secondary" role="alert">
+        container-fluid : it stay the same size no matter the size of the browser
+      </div>
+    </div>
+  </br ></br ></br >
+    <div class='container'>
+        <div class='row'>
 
-  </div>
-  <!-- Footer Links -->
+            <div class='col-12'>
+              <div class="alert alert-primary" role="alert">
+                (col-12) The full col width is 12
+              </div>
+            </div>
 
-</footer>
-<!-- Footer -->
-</main>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
-</html>
+            <!-- This is the col 1 section -->
+            <div class='col-1'>
+              <div class="alert alert-primary" role="alert">
+                (col-1)
+              </div>
+            </div>
+
+            <div class='col-1'>
+              <div class="alert alert-primary" role="alert">
+                (col-1)
+              </div>
+            </div>
+
+            <div class='col-1'>
+              <div class="alert alert-primary" role="alert">
+                (col-1)
+              </div>
+            </div>
+
+            <div class='col-1'>
+              <div class="alert alert-primary" role="alert">
+                (col-1)
+              </div>
+            </div>
+
+            <div class='col-1'>
+              <div class="alert alert-primary" role="alert">
+                (col-1)
+              </div>
+            </div>
+
+            <div class='col-1'>
+              <div class="alert alert-primary" role="alert">
+                (col-1)
+              </div>
+            </div>
+
+            <div class='col-1'>
+              <div class="alert alert-primary" role="alert">
+                (col-1)
+              </div>
+            </div>
+
+            <div class='col-1'>
+              <div class="alert alert-primary" role="alert">
+                (col-1)
+              </div>
+            </div>
+
+            <div class='col-1'>
+              <div class="alert alert-primary" role="alert">
+                (col-1)
+              </div>
+            </div>
+
+            <div class='col-1'>
+              <div class="alert alert-primary" role="alert">
+                (col-1)
+              </div>
+            </div>
+
+            <div class='col-1'>
+              <div class="alert alert-primary" role="alert">
+                (col-1)
+              </div>
+            </div>
+
+            <div class='col-1'>
+              <div class="alert alert-primary" role="alert">
+                (col-1)
+              </div>
+            </div>
+
+             <!-- End  section -->
+
+            <div class='col-1'>
+              <div class="alert alert-primary" role="alert">
+                This is (col-1) in side row
+              </div>
+            </div>
+
+            <div class='col'>
+              <div class="alert alert-secondary" role="alert">
+                The default col is 12
+              </div>
+            </div>
+
+            <div class='col'>
+              <div class="alert alert-secondary" role="alert">
+                some random text here 
+              </div>
+            </div>
+
+            <div class='col'>
+              <div class="alert alert-secondary" role="alert">
+                container: it shrink when size of the browser is changed
+              </div>
+            </div>
+
+            <div class='col'>
+              <div class="alert alert-secondary" role="alert">
+                container: it shrink when size of the browser is changed
+              </div>
+            </div>
+
+            <div class='col'>
+              <div class="alert alert-secondary" role="alert">
+                container: it shrink when size of the browser is changed
+              </div>
+            </div>
+
+            <div class='col'>
+              <div class="alert alert-secondary" role="alert">
+                container: it shrink when size of the browser is changed
+              </div>
+            </div>
+
+            <div class='col'>
+              <div class="alert alert-secondary" role="alert">
+                container: it shrink when size of the browser is changed
+              </div>
+            </div>
+
+            <div class='col'>
+              <div class="alert alert-secondary" role="alert">
+                container: it shrink when size of the browser is changed
+              </div>
+            </div>
+
+            <div class='col'>
+              <div class="alert alert-secondary" role="alert">
+                container: it shrink when size of the browser is changed
+              </div>
+            </div>
+
+            <div class='col'>
+              <div class="alert alert-secondary" role="alert">
+                container: it shrink when size of the browser is changed
+              </div>
+            </div>
+
+            <div class='col'>
+              <div class="alert alert-secondary" role="alert">
+                container: it shrink when size of the browser is changed
+              </div>
+            </div>
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,5 +1,79 @@
-{% for obj in object_list %}
+{% extends "base.html" %}
+<!-- <a href ='{{ obj.get_absolute_url}}'>{{ obj.title }}</a> <br/> -->
+{% block content %}
+	<div class='container-fluid'>
 
-{{ obj.title }}  <br/>
+		<!---------------- Search bar -------------------------->
+		<div class='row'>
+			<div class='col-12 col-sm-12 col-md-6 col-lg-4 ml-auto py-3'>
+			{% include "search\snippets\search-form.html" %}
+			</div>
+		</div>
 
-{% endfor %}
+		<!----------------  Main  -------------------------->
+		<div class='container-fluid'>
+			<div class='row'>
+				<!---------------- Sidde bar ------------->
+				<aside class="col-12 col-sm-2 p-0 bg-light ml-auto">
+		            <nav class="navbar navbar-expand-sm navbar-light bg-light align-items-start flex-sm-column flex-row">
+		                <a class="navbar-brand" href="#"><i class="fa fa-bullseye fa-fw"></i> Category </a>
+		                <a href class="navbar-toggler" data-toggle="collapse" data-target=".sidebar">
+		                   <span class="navbar-toggler-icon"></span>
+		                </a>
+		                <div class="collapse navbar-collapse sidebar">
+		                    <ul class="flex-column navbar-nav w-100 justify-content-between">
+		                        <li class="nav-item">
+		                            <a class="nav-link pl-0" href="#"><i class="fa fa-heart-o fa-fw"></i> <span class="">Link</span></a>
+		                        </li>
+		                        <li class="nav-item">
+		                            <a class="nav-link pl-0 dropdown-toggle text-nowrap" href="#m1" data-parent="#navbar1" data-toggle="collapse" data-target="#m1" aria-expanded="false">
+		                                <i class="fa fa-address-card-o fa-fw"></i> <span class=""> Link</span>
+		                            </a>
+		                            <div class="collapse" id="m1">
+		                                <ul class="flex-column nav">
+		                                    <a class="nav-link px-0 text-truncate" href="#">Sub</a>
+		                                    <a class="nav-link px-0 text-truncate" href="#">Sub longer</a>
+		                                </ul>
+		                            </div>
+		                        </li>
+		                        <li class="nav-item">
+		                            <a class="nav-link pl-0" href="#"><i class="fa fa-book fa-fw"></i> <span class="">Link</span></a>
+		                        </li>
+		                        <li class="nav-item">
+		                            <a class="nav-link pl-0" href="#"><i class="fa fa-heart fa-fw"></i> <span class="">Link</span></a>
+		                        </li>
+		                    </ul>
+		                </div>
+		            </nav>
+		        </aside>
+
+				<!---------------- Product main ------------->
+				<div class="col-12 col-lg-8 order-6 mr-auto">
+					<div class="alert alert-primary" role="alert" style='min-height: 700px;'>
+						<!---------- Text Row --------------->
+						<div class='row'>
+							<div class='col-3 mr-auto pb-2'>
+							<small>Showing 123 results out of 200 </small>
+							</div>
+							<div class='col-3'>
+							<small>This is some small text</small>
+							</div>
+						</div>
+
+						<!---------Product Row -------------->
+						<div class='row'>
+							{% for obj in object_list %}
+								{% include 'products/snippets/card.html' with instance=obj %}
+								<!-- {% if forloop.counter|divisibleby:3 %}
+								{% endif %}
+		 -->
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+{% endblock %}
