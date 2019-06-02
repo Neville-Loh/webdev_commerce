@@ -43,8 +43,10 @@ INSTALLED_APPS = [
 
     #own
     'carts',
+    'billing',
     'pages',
     'products',
+    'orders',
     'search',
     'tags',
     'users.apps.UsersConfig',

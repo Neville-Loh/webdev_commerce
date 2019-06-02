@@ -32,13 +32,11 @@ from products.views import (
     ProductFeaturedListView,
     ProductFeaturedDetailView,
 
+
     # function based view testing
     # product_list_view,
     # product_detail_view, 
     )
-
-# cart view
-from carts.views import cart_home
 
 # default django login logout view'ProductFeaturedtListView
 from django.contrib.auth import views as auth_views
@@ -49,15 +47,18 @@ urlpatterns = [
 
     # User url
     path('register/', user_views.register, name='register'),
-    path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),  # as_view set the directory of html
+    path('login/', user_views.login_page, name='login'),
+    path('register/guest', user_views.guest_register_view, name='guest_register'),
+    #path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),  # as_view set the directory of html
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
     path('profile/', user_views.profile, name='profile'),
 
     # Product url
     url(r'^products/', include("products.urls", namespace='products')),
     url(r'^search/', include("search.urls", namespace='search')),
-    url(r'^cart/$',cart_home, name='cart'),
 
+    # Cart
+    url(r'^cart/', include("carts.urls", namespace='cart')),
 ]
 
 ####### If DEBUG is On, turn on local static ################################

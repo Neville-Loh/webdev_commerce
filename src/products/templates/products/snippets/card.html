@@ -15,43 +15,71 @@
 </div> -->
 <style type="text/css">
 .card-img-top {
-    width: 100%;
-    height: 15vw;
+/*    width: 100%;
+    height: 15vw; */
     object-fit: cover;
 }
+/* Small devices(landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .card-img-top {
+    height: 19vw;
+  }
+}
+/* Medium devices( tablets, 768px and up) */
+@media (min-width: 768px) {
+  .card-img-top {
+    height: 14vw;
+  }
+}
+/* large devices(desktops 992px and up) */
+@media (min-width: 992px) {
+  .card-img-top {
+    height: 17vw;
+  }
+}
+
 </style>
 
 
-<div class="col-md-4">
-          <div class="card mb-4 shadow-sm" style='min-height: 400px; max-height: 400px;'>
+<!-- style='min-height: 400px; max-height: 400px;' -->
+<!-- style='min-height: 225px;' -->
+<div class="col-6 col-md-4 px-2 px-md-3">
+          <div class="card mb-4 shadow-sm">
 
             <!------------------------ Image componet --------------------------->
             {% if instance.image %}
               <a href="{{ instance.get_absolute_url }}">
-                  <img src="{{ instance.image.url }}" class="card-img-top" alt="{{ instance.title }} logo" style='min-height: 225px;'>
+                  <img src="{{ instance.image.url }}" class="card-img-top" alt="{{ instance.title }}" >
               </a>
             {% else %}
-              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+              <svg class="bd-placeholder-img card-img-top" width="100%"  xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
             {% endif %}
 
             <!------------------------ Card body -------------------------------->
-            <div class="card-body">
-              <a href="{{ instance.get_absolute_url }}">
-                <h5 class="card-title">{{ instance.title }}</h5>
-              </a>
+            <div class="card-body-fluid py-0">
+              <div class='row px-4 pt-3'>
+                <a href="{{ instance.get_absolute_url }}">
+                  <h5 class="card-title">{{ instance.title }}</h5>
+                </a>
+              </div>
+              <div class="container-fluid my-3 mx-0">
+                  <!-- <p class="card-text pt-auto"><small>{{ instance.description|truncatewords:8 }}</small></p>
+                  -->
 
-              <div class="alert alert-primary" role="alert">
-                  <p class="card-text pt-auto"><small>{{ instance.description|truncatewords:8 }}</small></p>
 
-                <div class="d-flex justify-content-between align-items-center">
+
+
+                <span class="text-muted mr-auto">${{ instance.price }}</span>
+
+                <div class='row my-1'>
+                  <div class='col-12 col-lg-9 ml-auto pl-4 '>
+                    <div class="btn-group pt-auto">
+                      <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{ instance.get_absolute_url }}">View</a></button>
+                      {% include 'products/snippets/update-cart.html' with product=instance cart=cart %} 
+                    </div>
+                  </div>
                 </div>
 
-                <div class="btn-group pt-auto">
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{ instance.get_absolute_url }}">View</a></button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-
-                <small class="text-muted">${{ instance.price }}</small>
               </div>
 
             </div>

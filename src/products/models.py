@@ -6,7 +6,7 @@ from django.db.models import Q
 from django.db.models.signals import pre_save, post_save
 from django.urls import reverse
 
-from .utils import unique_slug_generator
+from web_project.utils import unique_slug_generator
 
 def get_filename_ext(filepath):
 	base_name = os.path.basename(filepath)
@@ -84,8 +84,10 @@ class Product(models.Model):
 	def __str__(self):
 		return self.title
 
-	def __unicode__(self):
+	@property
+	def name(self):
 		return self.title
+	
 
 def product_pre_save_receiver(sender, instance, *args, **kwagrs):
 	if not instance.slug:

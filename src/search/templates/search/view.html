@@ -1,6 +1,6 @@
-<!-- {% extends "base.html" %}
+{% extends "base.html" %}
 <!-- <a href ='{{ obj.get_absolute_url}}'>{{ obj.title }}</a> <br/> -->
-{% block content2 %}
+<!-- {% block content2 %}
 	<div class='container-fluid'>
 		<div class='row'>
 			<div class="col-4 ml-auto py-2">
@@ -10,10 +10,10 @@
         </div>
 
 
-		<div class='row'>
+		<div class='row'> -->
 
 			<!---------------- Sidde bar ------------->
-			<div class="col-12 col-lg-2 mx-auto order-1">
+<!-- 			<div class="col-12 col-lg-2 mx-auto order-1">
 				<div class="alert alert-primary" role="alert" style='min-height: 700px;'>
                 side bar, col-2 
           		</div>
@@ -30,9 +30,9 @@
 						Ha
 					{% endif %}
 				</div>
-				</br ><div class="border-top py-2"></div>
+				</br ><div class="border-top py-2"></div> -->
 				<!------------------ Actual list ------------------ -->
-				<div class='row'>
+<!-- 				<div class='row'>
 
 					{% for obj in object_list %}
 						<div class='col'>
@@ -50,9 +50,10 @@
 
 		</div>
 	</div>
-{% endblock %}
+ {% endblock %}
  -->
 
+<!-- <a href ='{{ obj.get_absolute_url}}'>{{ obj.title }}</a> <br/> -->
 <!-- <a href ='{{ obj.get_absolute_url}}'>{{ obj.title }}</a> <br/> -->
 {% block content %}
 	<div class='container-fluid'>
@@ -68,7 +69,7 @@
 		<div class='container-fluid'>
 			<div class='row'>
 				<!---------------- Sidde bar ------------->
-				<aside class="col-12 col-sm-2 p-0 bg-light ml-auto">
+				<aside class="col-12 col-sm-2 col-lg-2 px-0 bg-light ml-auto">
 		            <nav class="navbar navbar-expand-sm navbar-light bg-light align-items-start flex-sm-column flex-row">
 		                <a class="navbar-brand" href="#"><i class="fa fa-bullseye fa-fw"></i> Category </a>
 		                <a href class="navbar-toggler" data-toggle="collapse" data-target=".sidebar">
@@ -102,20 +103,21 @@
 		        </aside>
 
 				<!---------------- Product main ------------->
-				<div class="col-12 col-lg-8 order-6 mr-auto">
-					<div class="alert alert-primary" role="alert" style='min-height: 700px;'>
+				<div class="col-12 col-lg-7 order-6 mr-lg-auto px-0">
+
+					<div class="alert alert-primary mx-0" role="alert" style='min-height: 700px;'>
 						<!---------- Text Row --------------->
 						<div class='row'>
-							<div class='col-5 mr-auto pb-2'>
-							<small>Searched for '{{ query }}'. </small>
+							<div class='col-12 col-mb-3 mr-auto pb-2'>
+							<small>Showing 123 results out of 200 </small>
 							</div>
-							<div class='col-3'>
+							<div class='col-12 col-mb-3'>
 							<small>This is some small text</small>
 							</div>
 						</div>
 
 						<!---------Product Row -------------->
-						<div class='row'>
+						<div id="viewbox" class='row'>
 							{% for obj in object_list %}
 								{% include 'products/snippets/card.html' with instance=obj %}
 								<!-- {% if forloop.counter|divisibleby:3 %}
@@ -123,8 +125,12 @@
 		 -->
 							{% endfor %}
 						</div>
+
 					</div>
+
 				</div>
+
+
 
 			</div>
 		</div>

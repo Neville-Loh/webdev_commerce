@@ -1,5 +1,7 @@
 {% url 'home_view' as home_url %}
 {% url 'about_view' as about_url %}
+{% url 'cart:home' as cart_url %}
+
 
 <style>
   .dropdown:hover>.dropdown-menu{
@@ -52,8 +54,10 @@
 
       </ul>
       <!-- Navbar Right Side  -->
-
       <div class="navbar-nav">
+        <li class="nav-item px-2">
+          <a class="nav-link" href="{{ cart_url }}"><i class="fas fa-shopping-cart"></i> {{ request.session.cart_items }}</a>
+        </li>
         <!-- checking login status  -->
         {% if user.is_authenticated %}
           <img class="rounded-circle account-im" src="{{ user.profile.image.url }}"  width="40px" height="40px">
