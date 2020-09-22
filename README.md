@@ -8,6 +8,8 @@ This is a website for a flower shop.
 - adding shop product for the client with interface
 - cart system
 - session system
+- Billing and address handeler
+- Admin login and database management
 
 # Getting started
 To run the project
